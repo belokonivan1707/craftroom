@@ -1,0 +1,16 @@
+DRY - Do not repeat yourself
+KISS - Keep it simple, smart
+SOLID: 
+* Single-responsibility Principle
+* The open-closed principle says code should be open for extension, but closed for modification
+* The Liskov substitution principle states that any class should be substitutable for its parent class without unexpected consequences.
+What it really means is that if you pass a subclass of an abstraction you need to make sure you don’t alter any behavior or state semantics of the parent abstraction.
+
+
+1. What excites or interests you about coding? 
+
+First of all, coding it is our present and our future, this thoughts incriase my motivation. 
+You write code and potentially a lot of people will be using what you write. 
+For me it means that you doing something usefull.
+
+2.

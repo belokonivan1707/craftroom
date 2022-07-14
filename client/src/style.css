@@ -1,0 +1,36 @@
+body {
+  height: 100%;
+  margin: 0;
+  font-family:  Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* web kit for safari browsers that removes buttons from */
+.input-number input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button  {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.hidden-scroll {
+  overflow: moz-scrollbars-none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hidden-scroll::-webkit-scrollbar {
+  display: none;
+}

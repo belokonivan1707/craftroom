@@ -1,0 +1,10 @@
+1. What is a closure? 
+Closure, it's a combination of functions and a lexical environment from which it was declared 
+Closures allow functions to access variables from the  enclosing  scope or environment even after it 
+leaves the scope in which it was declared. 
+
+
+2. Arrow fucntions and this? 
+With arrow functions, the this keyword always represents the object that defined the arrow function.
+
+When you use the arrow function inside the object, it inherits the this value from the enclosing lexical scope 
