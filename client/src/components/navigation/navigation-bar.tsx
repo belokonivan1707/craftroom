@@ -1,39 +1,68 @@
 import React from 'react';
-import { Box, Button, Drawer, List, ListItem } from '@mui/material';
-import { NAVIGATION_BAR } from '../../config/navigation-bar';
+import { Button, Divider, Drawer, List, ListItem, SvgIconTypeMap, Typography } from '@mui/material';
+import { NAVIGATION_BAR_ITEMS } from '../../config/navigation-bar';
 import { MAX_HEIGHT_HEADER } from '../../config/consts';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
 
-interface IProps {}
+interface IProps {
+  path: string;
+  title: string;
+  Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
+  handleClick?: (path: string) => void;
+  isActive?: boolean;
+}
 
-const NavigationItem = ({ path, title }: any) => {
+const NavigationItem: React.FC<IProps> = ({ path, title, Icon, handleClick, isActive }) => {
+  console.log('RENDERED NAVIGAION BAR ITEM path', path);
+
   return (
-    <List>
-      <ListItem>
-        <Button>{title}</Button>
+    <>
+      <ListItem sx={{ padding: 0 }}>
+        <Button
+          sx={{
+            justifyContent: 'flex-start',
+            color: 'text.secondary'
+          }}
+          // color={isActive === path ? 'primary' : 'secondary'}
+          fullWidth
+          href={path}
+          // onClick={() => handleClick(path)}
+        >
+          <Icon />
+          <Typography variant="body2" sx={{ padding: '0 0 0 10px', textTransform: 'capitalize' }}>
+            {title}
+          </Typography>
+        </Button>
       </ListItem>
-    </List>
+      <Divider />
+    </>
   );
 };
 
-export const NavigationBar = ({}: IProps) => {
+export const NavigationBar: React.FC<{ pathname: string }> = ({ pathname }) => {
+  console.log('RENDERED NavigationBar PATH PATH PATHNAME', pathname);
+  // React.useEffect(() => {}, [pathname]);
+
   return (
-    <nav style={{}}>
+    <nav>
       <Drawer
         open
         variant="permanent"
-        sx={{
-          height: `calc(100vh - ${MAX_HEIGHT_HEADER}px)`,
-          // top: MAX_HEIGHT_HEADER,
-          // position: 'relative',
-          // position: 'relative',
-          // overflowY: 'auto',
-          background: 'red',
-          width: 200
+        PaperProps={{
+          sx: {
+            height: `calc(100vh - ${MAX_HEIGHT_HEADER}px)`,
+            position: 'relative',
+            top: MAX_HEIGHT_HEADER,
+            overflowY: 'auto',
+            borderColor: `action.disabled`
+          }
         }}
       >
-        {/* {NAVIGATION_BAR.map(({ path, title }) => {
-          return <NavigationItem path={path} title={title} />;
-        })} */}
+        <List>
+          {NAVIGATION_BAR_ITEMS.map(({ path, title, icon }) => {
+            return <NavigationItem key={path} path={path} title={title} Icon={icon} />;
+          })}
+        </List>
       </Drawer>
     </nav>
   );

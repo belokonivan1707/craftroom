@@ -6,7 +6,7 @@ import { SettingDisplay } from '../lib/setting-display';
 import { TextFormField } from '../lib/fields/text-form-field';
 import { PinCode } from '../components/pin-code';
 
-export const WorkRoom = () => {
+const WorkRoom = () => {
   const [pin, setPin] = React.useState<(number | undefined)[]>([]);
   const onSubmitSettings = async () => {
     try {
@@ -72,3 +72,5 @@ export const WorkRoom = () => {
     </div>
   );
 };
+
+export default WorkRoom;

@@ -1,8 +1,20 @@
-body {
+html {
   height: 100%;
-  margin: 0;
+
   font-family:  Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+
+  overflow-x: hidden;
+  position: relative;
+
 }
 
 * {
@@ -11,20 +23,6 @@ body {
   box-sizing: border-box;
 }
 
-/* web kit for safari browsers that removes buttons from */
-.input-number input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button  {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-#root {
-  height: 100%;
-}
-
-html,
-body {
-    height: 100%;
-}
 
 .hidden-scroll {
   overflow: moz-scrollbars-none;
@@ -34,3 +32,12 @@ body {
 .hidden-scroll::-webkit-scrollbar {
   display: none;
 }
+
+/* web kit for safari browsers that removes buttons + and - from input number */
+.input-number input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button  {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
