@@ -15,11 +15,9 @@ export const Layout = ({ children }: IProps) => {
       <Header />
 
       <Box display="flex" height="100%">
-        <nav style={{ width: '10%' }}>
-          <MuiRouterContext.Consumer>
-            {({ pathname }) => <NavigationBar pathname={pathname} />}
-          </MuiRouterContext.Consumer>
-        </nav>
+        <MuiRouterContext.Consumer>
+          {({ pathname }) => <NavigationBar pathname={pathname} />}
+        </MuiRouterContext.Consumer>
 
         <Box
           width="90%"

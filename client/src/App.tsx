@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AppWrapper from './AppWrapper';
-import { Layout } from './components/layout';
+import { Layout } from './components/private-layout';
 import { ROUTES } from './config/routes';
 
 // without lazy loading
