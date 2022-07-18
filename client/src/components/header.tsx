@@ -2,10 +2,17 @@ import { Box } from '@mui/material';
 
 export const Header = () => {
   return (
-    <div style={{ height: 0 }}>
-      <header>
-        <Box sx={{ position: 'fixed', top: 0, width: '100%', height: 50, bgcolor: 'background.dark' }}></Box>
-      </header>
-    </div>
+    <header style={{ position: 'fixed', width: 'calc(90%)', top: 0, right: 0, zIndex: 1000 }}>
+      <Box
+        sx={{
+          width: '100%',
+          height: '51px',
+          bgcolor: 'background.transparent',
+          borderBottom: '1px solid',
+          borderColor: 'divider',
+          backdropFilter: 'blur(20px)'
+        }}
+      ></Box>
+    </header>
   );
 };

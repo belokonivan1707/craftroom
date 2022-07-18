@@ -33,7 +33,7 @@ export const CardsContainer = ({ users, refsMap, refUserPage, handleChangeUser }
     <div
       style={{
         marginLeft: 15,
-        paddingBottom: `${refUserPage.current?.clientHeight || 900}px`,
+        paddingBottom: `${refUserPage.current?.clientHeight || 700}px`,
         overflow: 'auto',
         background: 'purple'
       }}

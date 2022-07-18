@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, TextField, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import Speed from '@mui/icons-material/Speed';
 import { MuiCardForm } from '../lib/mui-card-form';
 import { SettingDisplay } from '../lib/setting-display';
@@ -24,10 +24,10 @@ const WorkRoom = () => {
   };
 
   return (
-    <div
-      style={{
+    <Paper
+      sx={{
         height: '2000px',
-        background: 'pink'
+        p: '10px 15px'
       }}
     >
       <h1>Work room</h1>
@@ -69,7 +69,7 @@ const WorkRoom = () => {
           }
         />
       </Box>
-    </div>
+    </Paper>
   );
 };
 

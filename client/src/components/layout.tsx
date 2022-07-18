@@ -14,33 +14,18 @@ export const Layout = ({ children }: IProps) => {
     <div style={{ width: '100%', height: '100%' }}>
       <Header />
 
-      <Box
-        display="flex"
-        justifyContent="space-between"
-        sx={{
-          height: '100%'
-        }}
-      >
-        <Box
-          sx={{
-            width: '100%',
-            maxWidth: 200,
-            background: 'black',
-            height: '100vh'
-          }}
-        >
+      <Box display="flex" height="100%">
+        <nav style={{ width: '10%' }}>
           <MuiRouterContext.Consumer>
             {({ pathname }) => <NavigationBar pathname={pathname} />}
           </MuiRouterContext.Consumer>
-        </Box>
+        </nav>
 
         <Box
+          width="90%"
           sx={{
-            marginTop: `${MAX_HEIGHT_HEADER}px`,
-            width: '90%',
-            height: `calc(100% - ${50}px)`,
-            overflowY: 'auto',
-            padding: '24px'
+            padding: `${MAX_HEIGHT_HEADER + 16}px 16px 16px 16px`,
+            overflowY: 'auto'
           }}
         >
           {children}

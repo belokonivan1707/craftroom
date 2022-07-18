@@ -1,69 +1,74 @@
 import React from 'react';
-import { Button, Divider, Drawer, List, ListItem, SvgIconTypeMap, Typography } from '@mui/material';
-import { NAVIGATION_BAR_ITEMS } from '../../config/navigation-bar';
-import { MAX_HEIGHT_HEADER } from '../../config/consts';
+import { Box, Button, List, ListItem, SvgIconTypeMap, Typography } from '@mui/material';
+import { INavBarRoute, NAV_BAR_ROUTES } from '../../config/navigation-routes';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { Link } from 'react-router-dom';
 
 interface IProps {
   path: string;
+  currentPath: string;
   title: string;
   Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
-  handleClick?: (path: string) => void;
+
   isActive?: boolean;
 }
 
-const NavigationItem: React.FC<IProps> = ({ path, title, Icon, handleClick, isActive }) => {
-  console.log('RENDERED NAVIGAION BAR ITEM path', path);
+const NavigationItem: React.FC<IProps> = ({ path, currentPath, title, Icon }) => {
+  const isActive = currentPath.replace('/', '').startsWith(path.replace('/', ''));
 
   return (
     <>
       <ListItem sx={{ padding: 0 }}>
-        <Button
-          sx={{
-            justifyContent: 'flex-start',
-            color: 'text.secondary'
-          }}
-          // color={isActive === path ? 'primary' : 'secondary'}
-          fullWidth
-          href={path}
-          // onClick={() => handleClick(path)}
-        >
-          <Icon />
-          <Typography variant="body2" sx={{ padding: '0 0 0 10px', textTransform: 'capitalize' }}>
-            {title}
-          </Typography>
-        </Button>
+        <Link to={path} style={{ width: '100%', borderBottom: '1px solid #DDDD' }}>
+          <Button
+            fullWidth
+            sx={{
+              justifyContent: 'flex-start',
+              color: `${isActive ? 'secondary' : 'text.secondary'}`
+            }}
+          >
+            <Icon />
+            <Typography variant="body2" sx={{ paddingLeft: '10px', textTransform: 'capitalize' }}>
+              {title}
+            </Typography>
+          </Button>
+        </Link>
       </ListItem>
-      <Divider />
     </>
   );
 };
 
-export const NavigationBar: React.FC<{ pathname: string }> = ({ pathname }) => {
-  console.log('RENDERED NavigationBar PATH PATH PATHNAME', pathname);
-  // React.useEffect(() => {}, [pathname]);
+interface INavigationBar {
+  pathname: string;
+  openDrawer?: boolean;
+  setOpenDrawer?: (toggle: boolean) => void;
+}
+
+export const NavigationBar: React.FC<INavigationBar> = ({ pathname }) => {
+  const renderNavItems = (item: INavBarRoute) => (
+    <NavigationItem
+      key={item.path}
+      path={item.path}
+      currentPath={pathname}
+      title={item.title}
+      Icon={item.icon}
+    />
+  );
 
   return (
-    <nav>
-      <Drawer
-        open
-        variant="permanent"
-        PaperProps={{
-          sx: {
-            height: `calc(100vh - ${MAX_HEIGHT_HEADER}px)`,
-            position: 'relative',
-            top: MAX_HEIGHT_HEADER,
-            overflowY: 'auto',
-            borderColor: `action.disabled`
-          }
+    <Box sx={{ width: '100%', border: '1px solid', borderColor: 'divider', height: '100vh' }}>
+      <Box
+        sx={{
+          width: '100%',
+          height: '50px',
+          bgcolor: 'background.transparent',
+          borderBottom: '1px solid',
+          borderColor: 'divider'
         }}
       >
-        <List>
-          {NAVIGATION_BAR_ITEMS.map(({ path, title, icon }) => {
-            return <NavigationItem key={path} path={path} title={title} Icon={icon} />;
-          })}
-        </List>
-      </Drawer>
-    </nav>
+        hello
+      </Box>
+      <List sx={{ p: 0 }}>{NAV_BAR_ROUTES.map(renderNavItems)}</List>
+    </Box>
   );
 };

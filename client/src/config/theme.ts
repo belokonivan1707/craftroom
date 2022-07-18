@@ -17,7 +17,9 @@ const palette = {
     },
     background: {
         default: '#fafbfc',
-        dark: 'rgb(38, 50, 56)'
+        dark: 'rgb(38, 50, 56)',
+        transparent: 'rgba(194, 224, 255, 0.08)',
+        border: 'rgba(194, 224, 255, 0.08);'
     },
     text: {
         primary: '#5C5C5C',

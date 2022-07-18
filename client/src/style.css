@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
 html {
   height: 100%;
 
@@ -11,18 +18,10 @@ html {
 
 body {
   height: 100%;
-
   overflow-x: hidden;
   position: relative;
 
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 
 .hidden-scroll {
   overflow: moz-scrollbars-none;

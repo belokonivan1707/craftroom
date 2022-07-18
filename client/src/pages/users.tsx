@@ -1,4 +1,5 @@
 import React from 'react';
+import Paper from '@mui/material/Paper/Paper';
 import { placeholderApi } from '../api/api';
 import { useQuery } from '../hooks/useQuery';
 import { useNavigate } from 'react-router-dom';
@@ -69,12 +70,11 @@ const Users: React.FC = () => {
   }
 
   return (
-    <div
+    <Paper
       ref={refUserPage}
       style={{
         display: 'flex',
-        background: 'orange',
-        height: '100%'
+        height: 'calc(100vh - 82px)'
       }}
     >
       <FuckingUsersContext.Provider value={[context, setContext]}>
@@ -89,7 +89,7 @@ const Users: React.FC = () => {
           handleChangeUser={handleChangeUser}
         />
       </FuckingUsersContext.Provider>
-    </div>
+    </Paper>
   );
 };
 
