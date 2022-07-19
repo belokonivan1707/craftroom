@@ -11,7 +11,7 @@ export interface INavBarRoute {
 }
 
 export const NAV_BAR_ROUTES = [
-    { path: '/home', title: 'home', icon: HomeIcon },
-    { path: '/users', title: 'users', icon: PeopleIcon },
-    { path: '/workroom', title: 'workroom', icon: EngineeringIcon }
+    { path: '/dashboard/home', title: 'home', icon: HomeIcon },
+    { path: '/dashboard/users', title: 'users', icon: PeopleIcon },
+    { path: '/dashboard/workroom', title: 'workroom', icon: EngineeringIcon }
 ]

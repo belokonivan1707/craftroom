@@ -9,7 +9,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-export const Layout = ({ children }: IProps) => {
+export const PrivateLayout = ({ children }: IProps) => {
   return (
     <div style={{ width: '100%', height: '100%' }}>
       <Header />

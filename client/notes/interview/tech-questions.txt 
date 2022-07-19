@@ -8,3 +8,11 @@ leaves the scope in which it was declared.
 With arrow functions, the this keyword always represents the object that defined the arrow function.
 
 When you use the arrow function inside the object, it inherits the this value from the enclosing lexical scope 
+
+
+3.
+Cookie seems to be the most secured options. I'd like to further clarify the point here.
+The reason I think browser localStorage and sessionStorage do not provide enough security for storing auth tokens are as follows:
+
+cookie seems to be the most secured options. I'd like to further clarify the point here.
+localStorage and sessionStorage are not shared across sub-domains
