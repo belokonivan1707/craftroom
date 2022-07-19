@@ -3,3 +3,6 @@
 // install Redux 
 
 // bredcrums component
+
+// fake privat route 
+// :id route 
