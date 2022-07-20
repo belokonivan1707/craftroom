@@ -51,7 +51,6 @@ function useProvideAuth(): IUserContext {
         setUser(false);
       });
   };
-
   //   const sendPasswordResetEmail = email => {
   //     return firebase
   //       .auth()
