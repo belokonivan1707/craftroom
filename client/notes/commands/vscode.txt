@@ -1,1 +1,6 @@
+VSCODE
 Cmd+Ctrl+G  - select all matches of selected word.
+
+ZSH
+rm -rf directoryname
+mkdir
