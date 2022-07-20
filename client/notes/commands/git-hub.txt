@@ -3,5 +3,5 @@
 git reset --soft HEAD (flag sort do not delete changes)
 git reset --hard HEAD (flag hard delete changes)
 
- git commit -m --amend "an updated commit message"
+git commit --amend -m "New commit message."
 Adding the -m option allows you to pass in a new message
