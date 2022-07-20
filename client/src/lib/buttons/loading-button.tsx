@@ -2,12 +2,12 @@ import { Box, Button, CircularProgress } from '@mui/material';
 import { ButtonProps } from '@mui/material/Button';
 
 export type IProps = ButtonProps & {
-  loading: boolean;
+  loading?: boolean;
 };
 
 export const LoadingButton = ({ loading, onClick, ...rest }: IProps) => (
   <Box sx={{ position: 'relative' }}>
-    <Button {...rest} onClick={loading ? undefined : onClick} />
+    <Button disabled={loading} onClick={onClick} {...rest} />
     {loading && (
       <Box
         sx={{

@@ -1,21 +1,22 @@
+// TO DO MuiRouterContext and Suspense
+
 import { ThemeProvider } from '@mui/material';
+import { MuiTheme } from './config/theme';
 import { Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MuiTheme } from './config/theme';
 import { MuiRouterContext } from './lib/mui-router-context';
+import { Throbber } from './Throbber';
 
-const AppWrapper = ({ children }: any) => {
+interface IProps {
+  children: React.ReactNode;
+}
+
+const AppWrapper = ({ children }: IProps) => {
   const location = useLocation();
 
   return (
     <ThemeProvider theme={MuiTheme}>
-      <Suspense
-        fallback={
-          <h1 style={{ position: 'fixed', top: '50%', left: '50%', background: 'pink', width: '400px' }}>
-            Loading. . .
-          </h1>
-        }
-      >
+      <Suspense fallback={<Throbber />}>
         <MuiRouterContext.Provider value={{ pathname: location.pathname }}>
           {children}
         </MuiRouterContext.Provider>

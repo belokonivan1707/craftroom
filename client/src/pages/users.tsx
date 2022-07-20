@@ -7,6 +7,7 @@ import { isEmptyString } from '../utils/typeinference';
 import { IUser, RefsMap } from '../types/users-types';
 import { CardsContainer } from '../components/users/cards-container';
 import { SideBarContainer } from '../components/users/side-bar-container';
+import { MainLayout } from '../components/layouts/main-layout';
 
 export const FuckingUsersContext = React.createContext<IUser[] | [] | any | React.Context<any>>([]);
 
@@ -70,26 +71,31 @@ const Users: React.FC = () => {
   }
 
   return (
-    <Paper
-      ref={refUserPage}
-      style={{
-        display: 'flex',
-        height: 'calc(100vh - 82px)'
-      }}
+    <MainLayout
+      pageName="Fucking users"
+      pageDescription="Fucking users page where everything is fake"
     >
-      <FuckingUsersContext.Provider value={[context, setContext]}>
-        <SideBarContainer users={users} handleSideBarClick={handleSideBarClick} />
+      <Paper
+        ref={refUserPage}
+        style={{
+          display: 'flex',
+          height: 'calc(100vh - 130px)'
+        }}
+      >
+        <FuckingUsersContext.Provider value={[context, setContext]}>
+          <SideBarContainer users={users} handleSideBarClick={handleSideBarClick} />
 
-        {/* <input type="text" onChange={handleChangeSearchInput} value={searchInputValue} /> */}
+          {/* <input type="text" onChange={handleChangeSearchInput} value={searchInputValue} /> */}
 
-        <CardsContainer
-          refUserPage={refUserPage}
-          refsMap={refsMap}
-          users={users}
-          handleChangeUser={handleChangeUser}
-        />
-      </FuckingUsersContext.Provider>
-    </Paper>
+          <CardsContainer
+            refUserPage={refUserPage}
+            refsMap={refsMap}
+            users={users}
+            handleChangeUser={handleChangeUser}
+          />
+        </FuckingUsersContext.Provider>
+      </Paper>
+    </MainLayout>
   );
 };
 

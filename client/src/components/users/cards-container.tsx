@@ -32,10 +32,10 @@ export const CardsContainer = ({ users, refsMap, refUserPage, handleChangeUser }
   return (
     <div
       style={{
+        width: '100%',
         marginLeft: 15,
         paddingBottom: `${refUserPage.current?.clientHeight || 700}px`,
-        overflow: 'auto',
-        background: 'purple'
+        overflow: 'auto'
       }}
     >
       {users.map(renderUserCard)}

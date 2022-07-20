@@ -6,3 +6,9 @@ https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/main/src/qu
 
 Event Loop:
 https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif
+
+Use Auth Hook and onthers hooks
+https://usehooks.com/
+
+Article Private Route
+https://dev.to/iamandrewluca/private-route-in-react-router-v6-lg5

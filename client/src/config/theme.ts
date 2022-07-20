@@ -31,6 +31,9 @@ const palette = {
     common: {
         white: '#FFF'
     },
+    custom: {
+        divider: 'rgb(0, 0, 0, 0.12)'
+    },
     divider: 'rgba(0, 0, 0, 0.1)'
 };
 

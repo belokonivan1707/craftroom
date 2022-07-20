@@ -1,0 +1,16 @@
+.header {
+ position: 'fixed';
+ top: 0;
+ right: 0;
+ z-index: 100;
+}
+
+.main-header {
+    width: '100%';
+    left: 200;
+}
+
+.private-header {
+    width: '90%';
+    left: 200;
+}
