@@ -3,8 +3,8 @@ import Paper from '@mui/material/Paper/Paper';
 import { placeholderApi } from '../api/api';
 import { useQuery } from '../hooks/useQuery';
 import { useNavigate } from 'react-router-dom';
-import { isEmptyString } from '../utils/typeinference';
-import { IUser, RefsMap } from '../types/users-types';
+import { isEmptyString } from '../lib/utils/typeinference';
+import { IUser, RefsMap } from '../components/users/modules';
 import { CardsContainer } from '../components/users/cards-container';
 import { SideBarContainer } from '../components/users/side-bar-container';
 import { MainLayout } from '../components/layouts/main-layout';
@@ -12,7 +12,7 @@ import { MainLayout } from '../components/layouts/main-layout';
 export const FuckingUsersContext = React.createContext<IUser[] | [] | any | React.Context<any>>([]);
 
 const Users: React.FC = () => {
-  console.log('RENDER USERS PAGE');
+  // console.log('RENDER USERS PAGE');
   const refsMap: RefsMap = {};
   const refUserPage = React.useRef<HTMLDivElement>(null);
 

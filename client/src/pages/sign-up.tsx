@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box/Box';
 import Grid from '@mui/material/Grid/Grid';
 import { Form, Formik } from 'formik';
-import { LoadingButton } from '../lib/buttons/loading-button';
-import { TextFormField } from '../lib/fields/text-form-field';
+import { LoadingButton } from '../ui/buttons/loading-button';
+import { TextFormField } from '../ui/fields/text-form-field';
 import * as Yup from 'yup';
 import { useAuth } from '../hooks/useAuth';
 

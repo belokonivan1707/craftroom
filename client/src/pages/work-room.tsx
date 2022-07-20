@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, Paper, Typography } from '@mui/material';
 import Speed from '@mui/icons-material/Speed';
-import { MuiCardForm } from '../lib/mui-card-form';
-import { SettingDisplay } from '../lib/setting-display';
-import { TextFormField } from '../lib/fields/text-form-field';
-import { PinCode } from '../components/pin-code';
-import { MenuList } from '../components/menu/menu-list';
-import { TypographySettings } from '../components/typography-settings';
+import { MuiCardForm } from '../components/workroom/card-form/mui-card-form';
+import { SettingDisplay } from '../components/workroom/card-form/setting-display';
+import { TextFormField } from '../ui/fields/text-form-field';
+import { PinCode } from '../ui/pin-code';
+import { AccordionMenuList } from '../components/workroom/menu/acordion-menu-list';
+import { TypographySettings } from '../components/workroom/typography-settings';
 
 const WorkRoom = () => {
   const [pin, setPin] = React.useState<(number | undefined)[]>([]);
@@ -35,7 +35,7 @@ const WorkRoom = () => {
       <Box display="flex" justifyContent="space-between">
         <Box width="45%">
           <Box width="100%" marginBottom={4}>
-            <MenuList />
+            <AccordionMenuList />
           </Box>
 
           <Box width="100%" marginBottom={4}>

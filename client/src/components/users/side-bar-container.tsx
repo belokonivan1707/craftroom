@@ -1,6 +1,6 @@
 import React from 'react';
 import { FuckingUsersContext } from '../../pages/users';
-import { IUser } from '../../types/users-types';
+import { IUser } from './modules';
 
 interface IProps {
   users: IUser[];

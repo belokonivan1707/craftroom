@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAsyncData } from '../hooks/useAsyncData';
+import { useAsyncData } from '../../hooks/useAsyncData';
 
 export const AsyncHookPage = () => {
   const [state, serviceCall] = useAsyncData();
