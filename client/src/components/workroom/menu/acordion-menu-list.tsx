@@ -9,7 +9,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Divider from '@mui/material/Divider/Divider';
 import Typography from '@mui/material/Typography/Typography';
 
-export const MenuList = () => {
+export const AccordionMenuList = () => {
   return (
     <List>
       {Array.from({ length: Math.floor(Math.random() * 10) }, (_, index) => (

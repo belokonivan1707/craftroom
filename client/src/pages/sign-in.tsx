@@ -2,10 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Grid from '@mui/material/Grid/Grid';
 import Box from '@mui/material/Box/Box';
-import { TextFormField } from '../lib/fields/text-form-field';
+import { TextFormField } from '../ui/fields/text-form-field';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { LoadingButton } from '../lib/buttons/loading-button';
+import { LoadingButton } from '../ui/buttons/loading-button';
 import { useAuth } from '../hooks/useAuth';
 
 interface SignInFormData {

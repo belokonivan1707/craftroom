@@ -29,7 +29,7 @@ export const useAuth = () => {
   return React.useContext(AuthContext);
 };
 
-function useProvideAuth(): any {
+function useProvideAuth(): IUserContext {
   const [user, setUser] = React.useState<any>(null);
 
   const signin = async (email: string, password: string) => {

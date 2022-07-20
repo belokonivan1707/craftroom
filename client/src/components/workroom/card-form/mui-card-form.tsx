@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Button, Card, IconButton, Typography } from '@mui/material';
 import { Edit } from '@mui/icons-material';
 import { Formik, FormikValues } from 'formik';
-import { LoadingButton } from './buttons/loading-button';
+import { LoadingButton } from '../../../ui/buttons/loading-button';
 
 interface IProps {
   title: string;
