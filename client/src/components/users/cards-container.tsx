@@ -1,6 +1,6 @@
 import React from 'react';
 import { UserCard } from './user-card';
-import { IUser, RefsMap } from '../../types/users-types';
+import { IUser, RefsMap } from './modules';
 import { FuckingUsersContext } from '../../pages/users';
 
 interface IProps {
