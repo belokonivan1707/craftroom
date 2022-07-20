@@ -7,7 +7,7 @@ import { isEmptyString } from '../utils/typeinference';
 import { IUser, RefsMap } from '../types/users-types';
 import { CardsContainer } from '../components/users/cards-container';
 import { SideBarContainer } from '../components/users/side-bar-container';
-import { MainLayout } from '../components/main-layout';
+import { MainLayout } from '../components/layouts/main-layout';
 
 export const FuckingUsersContext = React.createContext<IUser[] | [] | any | React.Context<any>>([]);
 

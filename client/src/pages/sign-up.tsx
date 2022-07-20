@@ -1,38 +1,49 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Grid from '@mui/material/Grid/Grid';
 import Box from '@mui/material/Box/Box';
-import { TextFormField } from '../lib/fields/text-form-field';
+import Grid from '@mui/material/Grid/Grid';
 import { Form, Formik } from 'formik';
-import * as Yup from 'yup';
 import { LoadingButton } from '../lib/buttons/loading-button';
+import { TextFormField } from '../lib/fields/text-form-field';
+import * as Yup from 'yup';
 import { useAuth } from '../hooks/useAuth';
 
-interface SignInFormData {
+interface SignUpFormData {
+  firstName?: string;
+  lastName?: string;
   email: string;
   password: string;
+  confirmPassword: string;
 }
 
-const initialValues: SignInFormData = {
+const initialValues: SignUpFormData = {
+  firstName: '',
+  lastName: '',
   email: '',
-  password: ''
+  password: '',
+  confirmPassword: ''
 };
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Email is required'),
+  //   firstName: Yup.string().required('This field is required.'),
+  //   lastName: Yup.string().required('This field is required.'),
+  email: Yup.string().email('Invalid email').required('This field is required.'),
   password: Yup.string()
-    .min(6, 'Password should contain at least 6 characters')
-    .required('Password is required')
+    .min(6, 'Password should contain at least 8 characters')
+    .required('This field is required.'),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref('password')], 'Passwords must match.')
+    .required('This field is required.')
 });
 
-export const SignIn: React.FC = () => {
+export const SignUp = () => {
   const navigate = useNavigate();
-  const { signin } = useAuth();
+  const { signup } = useAuth();
 
-  const onSubmitSignInWithEmailAndPassword = async (values: SignInFormData) => {
+  const onSubmit = async (values: SignUpFormData) => {
     const { email, password } = values;
     try {
-      await signin(email, password);
+      await signup(email, password);
       navigate('/dashboard/home');
     } catch (err: any) {
       alert(err?.code);
@@ -42,11 +53,7 @@ export const SignIn: React.FC = () => {
   return (
     <Box>
       <h1>sign in page</h1>
-      <Formik
-        onSubmit={onSubmitSignInWithEmailAndPassword}
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-      >
+      <Formik onSubmit={onSubmit} initialValues={initialValues} validationSchema={validationSchema}>
         {({ submitForm, isSubmitting }) => (
           <Form>
             <Grid container spacing={2}>
@@ -56,6 +63,10 @@ export const SignIn: React.FC = () => {
               <Grid item xs={12}>
                 <TextFormField type="password" name="password" label="Password" />
               </Grid>
+              <Grid item xs={12}>
+                <TextFormField name="confirmPassword" type="password" label={'Confirm Password'} />
+              </Grid>
+
               <LoadingButton
                 color="primary"
                 variant="contained"
@@ -63,7 +74,7 @@ export const SignIn: React.FC = () => {
                 loading={isSubmitting}
                 onClick={submitForm}
               >
-                Sign In
+                Sign Up
               </LoadingButton>
             </Grid>
           </Form>

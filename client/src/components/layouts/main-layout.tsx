@@ -2,7 +2,7 @@
 import React from 'react';
 import { styled, Typography, Breadcrumbs } from '@mui/material';
 import { Box } from '@mui/system';
-import { isString } from '../utils/typeinference';
+import { isString } from '../../utils/typeinference';
 import { Link } from 'react-router-dom';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
