@@ -8,11 +8,11 @@ import { IUser, RefsMap } from '../components/users/modules';
 import { CardsContainer } from '../components/users/cards-container';
 import { SideBarContainer } from '../components/users/side-bar-container';
 import { MainLayout } from '../components/layouts/main-layout';
+import { HEADER_HEIGHT } from '../config/consts';
 
 export const FuckingUsersContext = React.createContext<IUser[] | [] | any | React.Context<any>>([]);
 
 const Users: React.FC = () => {
-  // console.log('RENDER USERS PAGE');
   const refsMap: RefsMap = {};
   const refUserPage = React.useRef<HTMLDivElement>(null);
 
@@ -79,7 +79,7 @@ const Users: React.FC = () => {
         ref={refUserPage}
         style={{
           display: 'flex',
-          height: 'calc(100vh - 130px)'
+          height: `calc(100vh - ${HEADER_HEIGHT + 12 + 47 + 24}px)`
         }}
       >
         <FuckingUsersContext.Provider value={[context, setContext]}>

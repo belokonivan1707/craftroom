@@ -3,6 +3,7 @@ import Box from '@mui/material/Box/Box';
 import List from '@mui/material/List/List';
 import { INavBarRoute, NAV_BAR_ROUTES } from '../../config/routes';
 import { NavigationItem } from './navigation-item';
+import { HEADER_HEIGHT } from '../../config/consts';
 
 interface INavigationBar {
   pathname: string;
@@ -28,13 +29,13 @@ export const NavigationBar: React.FC<INavigationBar> = ({ pathname }) => {
           width: '100%',
           border: '1px solid',
           borderColor: 'divider',
-          height: '100vh'
+          height: `100vh`
         }}
       >
         <Box
           sx={{
             width: '100%',
-            height: '50px',
+            height: `${HEADER_HEIGHT}px`,
             bgcolor: 'background.transparent',
             borderBottom: '1px solid',
             borderColor: 'divider'
