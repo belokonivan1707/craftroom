@@ -70,7 +70,7 @@ export const MainLayout: React.FC<MainLayoutProps> = props => {
 
   return (
     <React.Fragment>
-      <Box>
+      <Box sx={{ mb: 1.5 }}>
         <MuiBreadcrumbs
           rootLabel={'Home'}
           //   items={[{ label: 'label', url: 'url' }]}

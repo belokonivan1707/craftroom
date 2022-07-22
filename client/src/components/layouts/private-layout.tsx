@@ -1,9 +1,9 @@
-import { Box } from '@mui/material';
 import React from 'react';
-import { MAX_HEIGHT_HEADER } from '../../config/consts';
+import { Box } from '@mui/material';
 import { MuiRouterContext } from '../../lib/mui-router-context';
 import { Header } from '../header/header';
 import { NavigationBar } from '../navigation/navigation-bar';
+import { HEADER_HEIGHT } from '../../config/consts';
 
 interface IProps {
   children: React.ReactNode;
@@ -11,10 +11,10 @@ interface IProps {
 
 export const PrivateLayout = ({ children }: IProps) => {
   return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <Header main />
+    <div id="private-layout" style={{ width: '100%', height: '100%' }}>
+      <Header />
 
-      <Box display="flex" height="100%">
+      <Box id="content" display="flex" sx={{ height: '100%', overflow: 'hidden' }}>
         <MuiRouterContext.Consumer>
           {({ pathname }) => <NavigationBar pathname={pathname} />}
         </MuiRouterContext.Consumer>
@@ -22,8 +22,8 @@ export const PrivateLayout = ({ children }: IProps) => {
         <Box
           width="90%"
           sx={{
-            padding: `${MAX_HEIGHT_HEADER + 16}px 16px 16px 16px`,
-            overflowY: 'auto'
+            padding: `${HEADER_HEIGHT + 12}px 12px 12px 12px`,
+            overflow: 'auto'
           }}
         >
           {children}

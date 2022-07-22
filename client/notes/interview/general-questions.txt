@@ -10,7 +10,7 @@ What it really means is that if you pass a subclass of an abstraction you need t
 1. What excites or interests you about coding? 
 
 First of all, coding it is our present and our future, this thoughts incriase my motivation. 
-You write code and potentially a lot of people will be using what you write. 
+You write code and potentially a lot of people will be using what you create. 
 For me it means that you doing something usefull.
 
 2.

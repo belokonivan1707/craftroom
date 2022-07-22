@@ -8,7 +8,6 @@ interface IProps {
 }
 export const PrivateRoutes = ({ children }: IProps) => {
   const { user } = useAuth();
-  console.log('private routes component use auth => auth', user);
 
   if (!user) {
     return <Navigate to={ROUTES.SIGN_IN} />;
